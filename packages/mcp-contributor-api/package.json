@@ -1,0 +1,17 @@
+{
+    "name": "@somenamespace/mcp-contributor-api",
+    "version": "0.0.1-alpha",
+    "type": "module",
+    "main": "dist/index.js",
+    "dependencies": {
+        "@modelcontextprotocol/sdk": "^1.17.0",
+        "zod": "^4.0.17"
+    },
+    "devDependencies": {
+        "@types/node": "^20.0.0"
+    },
+    "scripts": {
+        "build": "tsc --build tsconfig.build.json --verbose",
+        "test": "echo 'test script running for @somenamespace/mcp-contributor-api'"
+    }
+}

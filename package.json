@@ -1,0 +1,11 @@
+{
+    "name": "monorepo-this-name-is-not-used",
+    "private": true,
+    "workspaces": [
+        "packages/*"
+    ],
+    "scripts": {
+        "build": "npm run build --workspaces",
+        "test": "npm run test --workspaces"
+    }
+}
