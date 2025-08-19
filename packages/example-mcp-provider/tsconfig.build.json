@@ -10,7 +10,7 @@
   ],
   "references": [
     {
-      "path": "../mcp-contributor-api/tsconfig.build.json"
+      "path": "../mcp-provider-api/tsconfig.build.json"
     }
   ]
 }

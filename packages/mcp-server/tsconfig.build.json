@@ -2,18 +2,20 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "composite": true,
+    "resolveJsonModule": true,
     "outDir": "./dist",
     "rootDir": "./src"
   },
   "include": [
-    "./src"
+    "./src",
+    "./package.json"
   ],
   "references": [
     {
-      "path": "../mcp-contributor-api/tsconfig.build.json"
+      "path": "../mcp-provider-api/tsconfig.build.json"
     },
     {
-      "path": "../example-mcp-contributor/tsconfig.build.json"
+      "path": "../example-mcp-provider/tsconfig.build.json"
     }
   ]
 }

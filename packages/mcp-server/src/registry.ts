@@ -1,9 +1,9 @@
-import { McpContributor } from "@somenamespace/mcp-contributor-api";
-import { ExampleMcpContributor } from "@somenamespace/example-mcp-contributor"
+import { McpProvider } from "../../mcp-provider-api/dist/index.js";
+import { ExampleMcpProvider } from "../../example-mcp-provider/dist/index.js"
 
-export function createMcpContributors(): McpContributor[] {
+export function createMcpProviders(): McpProvider[] {
     return [
-        new ExampleMcpContributor(),
+        new ExampleMcpProvider(),
         // ... add more here
     ];
 }

@@ -1,11 +1,8 @@
 import { ReadResourceCallback, ReadResourceTemplateCallback, ResourceMetadata, ResourceTemplate } from "@modelcontextprotocol/sdk/server/mcp.js";
 
-export interface McpResourcesProvider {
-    provideResources(): McpResource[];
-    provideResourceTemplates(): McpResourceTemplate[];
-}
-
 export interface McpResource {
+    kind: 'McpResource'
+
     getName(): string
     
     getUri(): string
@@ -16,6 +13,8 @@ export interface McpResource {
 }
 
 export interface McpResourceTemplate {
+    kind: 'McpResourceTemplate'
+
     getName(): string
     
     getTemplate(): ResourceTemplate

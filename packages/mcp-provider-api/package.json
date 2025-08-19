@@ -1,15 +1,11 @@
 {
-    "name": "@somenamespace/mcp-server",
+    "name": "@somenamespace/mcp-provider-api",
     "version": "0.0.1-alpha",
     "type": "module",
     "main": "dist/index.js",
-    "bin": {
-        "some-mcp-server": "dist/index.js"
-    },
     "dependencies": {
-        "@modelcontextprotocol/sdk": "^1.17.0",
-        "@somenamespace/example-mcp-provider": "0.0.1-alpha",
-        "@somenamespace/mcp-provider-api": "0.0.1-alpha"
+        "@modelcontextprotocol/sdk": "^1.17.3",
+        "zod": "^3.23.8"
     },
     "devDependencies": {
         "@types/node": "^20.0.0"
@@ -21,9 +17,8 @@
     ],
     "scripts": {
         "build": "tsc --build tsconfig.build.json --verbose",
-        "postbuild": "chmod +x ./dist/index.js || echo 'skip chmod on windows'",
         "clean": "tsc --build tsconfig.build.json --clean",
-        "postclean": "rimraf dist && rimraf coverage && rimraf ./*.tgz",
+        "postclean": "rimraf dist && rimraf ./*.tgz",
         "package": "npm pack",
         "test": "echo 'need to add test framework script here'"
     }

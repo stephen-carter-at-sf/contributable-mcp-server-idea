@@ -1,8 +1,18 @@
 import { z }  from "zod";
 import { CallToolResult } from "@modelcontextprotocol/sdk/types.js";
-import { McpTool, McpToolConfig } from "@somenamespace/mcp-contributor-api"
+import { McpTool, McpToolConfig, TelemetryService, Toolset } from "@somenamespace/mcp-provider-api";
 
 export class ExampleTool implements McpTool {
+    private readonly telemetryService: TelemetryService;
+
+    constructor(telemetryService: TelemetryService) {
+        this.telemetryService = telemetryService;
+    }
+
+    getToolset(): Toolset {
+        return Toolset.EXPERIMENTAL;
+    }
+
     getConfig(): McpToolConfig {
         const config: McpToolConfig = {
             title: "exampleTitle",
@@ -22,6 +32,9 @@ export class ExampleTool implements McpTool {
     }
 
     exec(input?: Record<string, unknown>): Promise<CallToolResult> {
+        this.telemetryService.sendTelemetryEvent('sampleEvent', {
+            someAttribute: 'someAttributeValue'
+        });
         const result: CallToolResult = {
             content: [{
                 type: "text",
